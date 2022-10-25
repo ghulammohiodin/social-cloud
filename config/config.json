@@ -1,0 +1,11 @@
+{
+  "local": {
+    "PORT": 4002,
+    "DATABASE_URL": "mongodb://localhost:27017/socail-cloud-app",
+    "JWT_SECRET": "GHRFFGEFFREFRERRR",
+    "JWT_EXPIRES_IN": "90d",
+    "EMAIL": "info.nodejs.course@gmail.com",
+    "PASSWORD": "nodejs-course",
+    "NODE_ENV": "local"
+  }
+}
