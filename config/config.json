@@ -7,5 +7,23 @@
     "EMAIL": "info.nodejs.course@gmail.com",
     "PASSWORD": "nodejs-course",
     "NODE_ENV": "local"
+  },
+  "dev": {
+    "PORT": 4002,
+    "DATABASE_URL": "mongodb://localhost:27017/socail-cloud-app-dev",
+    "JWT_SECRET": "GHRFFGEFFREFRERRR",
+    "JWT_EXPIRES_IN": "90d",
+    "EMAIL": "info.nodejs.course@gmail.com",
+    "PASSWORD": "nodejs-course",
+    "NODE_ENV": "dev"
+  },
+  "prod": {
+    "PORT": 4002,
+    "DATABASE_URL": "mongodb://localhost:27017/socail-cloud-app-prod",
+    "JWT_SECRET": "GHRFFGEFFREFRERRR",
+    "JWT_EXPIRES_IN": "90d",
+    "EMAIL": "info.nodejs.course@gmail.com",
+    "PASSWORD": "nodejs-course",
+    "NODE_ENV": "prod"
   }
 }

@@ -1,5 +1,5 @@
 const admin = require("../admin");
-const index = require("../admin");
+const index = require("../index");
 const customer = require("../customer");
 const app_api = require("../app_api");
 
