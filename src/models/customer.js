@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const _ = require("lodash");
-
+const Joi = require("joi");
 const customerSchema = new mongoose.Schema(
   {
     user_id: {
@@ -55,7 +55,7 @@ const customerSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-userSchema.toJSON = function () {
+customerSchema.toJSON = function () {
   var customer = this;
   var customerObject = customer.toObject();
   var customerJson = _.pick(customerObject, [
@@ -78,5 +78,21 @@ userSchema.toJSON = function () {
   return customerJson;
 };
 
+function validateCustomer(customer) {
+  const schema = Joi.object({
+    email: Joi.string().email().required(),
+    password: Joi.string().min(6).max(255).required(),
+    first_name: Joi.string().required(),
+    last_name: Joi.string().required(),
+    profile_picture: Joi.object(),
+    contact_number: Joi.string(),
+    address: Joi.string(),
+    verifcation_status: Joi.boolean(),
+    verification_code: Joi.string(),
+  });
+  return schema.validate(customer);
+}
+
 const Customer = mongoose.model("Customer", customerSchema);
-module.exports = Customer;
+
+module.exports = { Customer, validateCustomer };

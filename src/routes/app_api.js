@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const { register_route } = require("../utils/register_route");
-const signup_admin = require("../controllers/admin/signup_admin");
+
+const login_user = require("../controllers/app_api/login");
 
 register_route({
   router,
-  route: "/signup_admin",
-  post_method: signup_admin,
+  route: "/login_user",
+  post_method: login_user,
 });
 
 module.exports = router;

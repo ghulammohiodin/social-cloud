@@ -5,4 +5,8 @@ const signup_admin = async (admin_data) => {
   return await admin.save();
 };
 
-module.exports = { signup_admin };
+const find_admin_by_user_id = async (user_id) => {
+  return await Admin.findOne({ user_id: user_id });
+};
+
+module.exports = { signup_admin, find_admin_by_user_id };
